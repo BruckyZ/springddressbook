@@ -1,0 +1,30 @@
+
+
+.body1
+{
+    background-color: beige;
+}
+
+.html{
+    height: 100px;
+}
+
+.fontstyle
+{
+    margin-top: 30px;
+    font-size: 25px;
+    color: darkslategrey;
+}
+
+
+.fontstyle1
+{
+    margin-top: 10px;
+    font-size: 15px;
+    color: darkslategrey;
+}
+
+.col-gap
+{
+    column-gap:40px
+}

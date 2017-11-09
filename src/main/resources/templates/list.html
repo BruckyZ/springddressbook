@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="css/Style.css"/>
+
+</head>
+<body class="body1">
+
+<div class="container">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+            <!--This will collapse the navigation bar and make it shown while clicking the bar even after min size,-->
+            <!--The Collapse start here-->
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#testNavBar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+
+        <div class="collapse navbar-collapse" id="testNavBar">
+            <!--The Collapse end here-->
+
+            <div class="row">
+                <ul class="nav navbar-nav">
+                    <div class="col-md-3"><li><a href="/add"> Add</a></li></div>
+                    <div class="col-md-3"><li><a href="/detail/1"> Show</a></li></div>
+                    <div class="col-md-3"><li><a href="/update/1"> Update</a></li></div>
+                    <div class="col-md-3"><li><a href="/delete/1"> Delete</a></li></div>
+                </ul>
+            </div>
+
+        </div>
+
+        </div>
+</nav>
+
+    <div class="fontstyle"><a href="/add"><strong> Add Your Address</strong></a><br/></div>
+
+
+
+<table>
+
+    <tr>
+        <th colspan="4" >Name</th>
+        <th colspan="4" >Email</th>
+        <th colspan="4" >Cellphone</th>
+        <td colspan="4">Actions</td>
+    </tr>
+
+    <tr th:each="address:${addresses}">
+        <td th:text="${address.name}"></td>
+        <td th:text="${address.email}"></td>
+        <td th:text="${address.cellphone}"></td>
+
+        <td>
+            <a th:href="@{/update/{id}(id=${address.id})}">Update</a>
+            <a th:href="@{/detail/{id}(id=${address.id})}">Details</a>
+            <a th:href="@{/delete/{id}(id=${address.id})}">Delete</a>
+        </td>
+    </tr>
+</table>
+
+
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</div>
+</body>
+</html>
